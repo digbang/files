@@ -8,9 +8,10 @@
  * @copyright Copyright (c) Ben Ramsey <http://benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
  *
- * @link https://packagist.org/packages/ramsey/uuid-doctrine Packagist
- * @link https://github.com/ramsey/uuid-doctrine GitHub
+ * @see https://packagist.org/packages/ramsey/uuid-doctrine Packagist
+ * @see https://github.com/ramsey/uuid-doctrine GitHub
  */
+
 namespace Digbang\Files\Doctrine\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;

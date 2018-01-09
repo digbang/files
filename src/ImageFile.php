@@ -35,8 +35,8 @@ class ImageFile extends File
      */
     public function getCurated(?string $curationKey)
     {
-        if($curationKey) {
-            return $this->curated->filter(function(ImageFile $item) use($curationKey) {
+        if ($curationKey) {
+            return $this->curated->filter(function (ImageFile $item) use ($curationKey) {
                 return $item->getCurationKey() == $curationKey;
             })->first();
         }
@@ -48,7 +48,7 @@ class ImageFile extends File
     {
         $entity = new static($this->getPath(), '', $this->getOriginalName(), $this->getMime());
 
-        $entity->filename = (string)$entity->id;
+        $entity->filename = (string) $entity->id;
         $entity->extension = $this->getExtension();
 
         $entity->contents = $curation->apply($this->getContents());

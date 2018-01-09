@@ -9,9 +9,9 @@ class ImageCurator
 {
     private $stack = [];
 
-    public function resize(int $width = null, int $height = null, bool $constraintAspectRatio = true, bool $preventUpsizing = true): ImageCurator
+    public function resize(int $width = null, int $height = null, bool $constraintAspectRatio = true, bool $preventUpsizing = true): self
     {
-        $this->stack[] = function(InterventionImage $image) use ($width, $height, $constraintAspectRatio, $preventUpsizing) {
+        $this->stack[] = function (InterventionImage $image) use ($width, $height, $constraintAspectRatio, $preventUpsizing) {
             $image->resize($width, $height, function (Constraint $constraint) use ($constraintAspectRatio, $preventUpsizing) {
                 if ($constraintAspectRatio) {
                     $constraint->aspectRatio();
@@ -26,9 +26,9 @@ class ImageCurator
         return $this;
     }
 
-    public function interlace(): ImageCurator
+    public function interlace(): self
     {
-        $this->stack[] = function(InterventionImage $image) {
+        $this->stack[] = function (InterventionImage $image) {
             $image->interlace();
         };
 
@@ -47,19 +47,20 @@ class ImageCurator
      *      webp — return WebP encoded image data
      *      data-url — encode current image data in data URI scheme (RFC 2397)
      * @param int $quality
-     *      0 to 100, Only useful if format is "jpg".
+     *      0 to 100, Only useful if format is "jpg"
+     *
      * @return ImageCurator
      */
-    public function encode(string $format, int $quality = 90): ImageCurator
+    public function encode(string $format, int $quality = 90): self
     {
-        $this->stack[] = function(InterventionImage $image) use ($format, $quality) {
+        $this->stack[] = function (InterventionImage $image) use ($format, $quality) {
             $image->encode($format, $quality);
         };
 
         return $this;
     }
 
-    public function optimize(): ImageCurator
+    public function optimize(): self
     {
         //TODO: Implement this...
 

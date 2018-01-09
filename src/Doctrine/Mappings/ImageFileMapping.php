@@ -1,4 +1,5 @@
 <?php
+
 namespace Digbang\Files\Doctrine\Mappings;
 
 use Digbang\Files\ImageFile;

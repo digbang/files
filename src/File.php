@@ -39,7 +39,7 @@ class File
         $entity->extension = $file->getExtension();
         $entity->contents = $file;
 
-        $entity->filename = (string)$entity->id;
+        $entity->filename = (string) $entity->id;
 
         return $entity;
     }
@@ -50,7 +50,7 @@ class File
         $entity->extension = $file->getClientOriginalExtension();
         $entity->contents = $file;
 
-        $entity->filename = (string)$entity->id;
+        $entity->filename = (string) $entity->id;
 
         return $entity;
     }
@@ -113,7 +113,7 @@ class File
 
     public function getContents()
     {
-        if(!$this->contents && $this->contentGetter) {
+        if (! $this->contents && $this->contentGetter) {
             $getter = $this->contentGetter;
             $this->contents = $getter();
         }

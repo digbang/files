@@ -17,7 +17,7 @@ class Curation
 
     public function apply($image): InterventionImage
     {
-        if (!$image instanceof InterventionImage) {
+        if (! $image instanceof InterventionImage) {
             $image = Image::make($image);
         }
 

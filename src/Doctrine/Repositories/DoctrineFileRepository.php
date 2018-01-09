@@ -32,7 +32,7 @@ class DoctrineFileRepository extends EntityRepository implements FileRepository
     {
         $this->_em->transactional(function () use ($file) {
             $contents = $file->getContents();
-            if($contents instanceof \Symfony\Component\HttpFoundation\File\File) {
+            if ($contents instanceof \Symfony\Component\HttpFoundation\File\File) {
                 $this->filesystem->putFileAs($file->getPath(), $contents, $file->getFilename());
             } elseif ($contents instanceof InterventionImage) {
                 $this->filesystem->put($file->getPath() . '/' . $file->getFilename(), $contents->encode()->getEncoded());
@@ -50,8 +50,7 @@ class DoctrineFileRepository extends EntityRepository implements FileRepository
         /** @var File $entity */
         $entity = $this->find($id);
         if ($entity) {
-
-            $entity->setContentGetter(function() use ($id) {
+            $entity->setContentGetter(function () use ($id) {
                 return $this->getContents($id);
             });
 

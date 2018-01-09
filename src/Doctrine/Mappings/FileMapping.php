@@ -1,4 +1,5 @@
 <?php
+
 namespace Digbang\Files\Doctrine\Mappings;
 
 use Digbang\Files\Doctrine\Types\UuidType;
@@ -17,6 +18,7 @@ class FileMapping extends EntityMapping
     {
         return File::class;
     }
+
     /**
      * Load the object's metadata through the Metadata Builder object.
      *

@@ -66,11 +66,11 @@ class FilesServiceProvider extends ServiceProvider
 
     private function registerTypes()
     {
-        if (!Type::hasType(InterventionImageType::NAME)) {
+        if (! Type::hasType(InterventionImageType::NAME)) {
             Type::addType(InterventionImageType::NAME, InterventionImageType::class);
         }
 
-        if (!Type::hasType(UuidType::NAME)) {
+        if (! Type::hasType(UuidType::NAME)) {
             Type::addType(UuidType::NAME, UuidType::class);
         }
     }
