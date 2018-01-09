@@ -1,0 +1,37 @@
+{
+    "name": "digbang/files",
+    "description": "File handling library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Juan Cruz Falcon",
+            "email": "jfalcon@digbang.com"
+        },
+        {
+            "name": "Darío Govergun",
+            "email": "dgovergun@digbang.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "ramsey/uuid": "^3.7",
+        "laravel-doctrine/orm": "^1.3",
+        "laravel-doctrine/fluent": "^1.1",
+        "intervention/image": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digbang\\Files\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digbang\\Files\\": "tests/"
+        }
+    },
+    "license": "MIT"
+}
