@@ -125,4 +125,9 @@ class File
     {
         $this->contentGetter = $callback;
     }
+
+    public function setExtension(string $extension): void
+    {
+        $this->extension = $extension;
+    }
 }
