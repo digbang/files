@@ -14,9 +14,9 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
-        "ramsey/uuid": "^3.9",
-        "laravel-doctrine/orm": "^1.6",
+        "php": "^7.2",
+        "ramsey/uuid": "^4.1",
+        "laravel-doctrine/orm": "^1.7",
         "laravel-doctrine/fluent": "^1.1",
         "intervention/image": "^2.5"
     },

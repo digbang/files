@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  php:
+    container_name: files_php_1
+    build: docker/php
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+     - .:/var/www/html
+    networks:
+     - appnet
+networks:
+  appnet:
+    driver: "bridge"
