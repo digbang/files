@@ -2,7 +2,7 @@
 
 namespace Digbang\Files\Doctrine\Mappings;
 
-use Digbang\Files\Doctrine\Types\UuidType;
+use Digbang\DoctrineExtensions\Types\UuidType;
 use Digbang\Files\File;
 use LaravelDoctrine\Fluent\EntityMapping;
 use LaravelDoctrine\Fluent\Fluent;
@@ -26,7 +26,7 @@ class FileMapping extends EntityMapping
      */
     public function map(Fluent $builder)
     {
-        $builder->field(UuidType::NAME, 'id')->primary();
+        $builder->field(UuidType::UUID, 'id')->primary();
         $builder->singleTableInheritance()->column('type');
 
         $builder->text('path');

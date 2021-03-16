@@ -2,9 +2,9 @@
 
 namespace Digbang\Files;
 
+use Digbang\DoctrineExtensions\Types\UuidType;
 use Digbang\Files\Doctrine\Repositories\DoctrineFileRepository;
 use Digbang\Files\Doctrine\Types\InterventionImageType;
-use Digbang\Files\Doctrine\Types\UuidType;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityManagerInterface;
 use Illuminate\Foundation\AliasLoader;
@@ -70,8 +70,8 @@ class FilesServiceProvider extends ServiceProvider
             Type::addType(InterventionImageType::NAME, InterventionImageType::class);
         }
 
-        if (! Type::hasType(UuidType::NAME)) {
-            Type::addType(UuidType::NAME, UuidType::class);
+        if (! Type::hasType(UuidType::UUID)) {
+            Type::addType(UuidType::UUID, UuidType::class);
         }
     }
 

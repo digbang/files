@@ -15,6 +15,7 @@
     ],
     "require": {
         "php": "^7.2",
+        "digbang/doctrine-extensions": "^3.1",
         "ramsey/uuid": "^4.1",
         "laravel-doctrine/orm": "^1.7",
         "laravel-doctrine/fluent": "^1.1",
