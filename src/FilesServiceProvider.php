@@ -7,6 +7,7 @@ use Digbang\Files\Doctrine\Repositories\DoctrineFileRepository;
 use Digbang\Files\Doctrine\Types\InterventionImageType;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Intervention\Image\Facades\Image as ImageFacade;
@@ -19,9 +20,12 @@ class FilesServiceProvider extends ServiceProvider
 {
     private const PACKAGE = 'files';
 
-    public function boot(EntityManagerInterface $entityManager, MetaDataManager $metadata)
+    public function boot(ManagerRegistry $managerRegistry, MetaDataManager $metadata)
     {
-        $this->doctrineMappings($entityManager, $metadata);
+        /** @var EntityManager $entityManager */
+        foreach ($managerRegistry->getManagers() as $entityManager) {
+            $this->doctrineMappings($entityManager, $metadata);
+        }
         $this->resources();
     }
 
